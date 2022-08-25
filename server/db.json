@@ -4,7 +4,51 @@
             "id": 1,
             "email": "tempEmail@temp.com",
             "password": "tempPassword",
-            "name": "tempUser"
+            "name": "tempUser",
+            "contacts": [2, 4]
+        },
+        {
+            "id": 2,
+            "email": "tempEmail2@temp2.com",
+            "password": "tempPassword2",
+            "name": "tempUser2"
+        },
+        {
+            "id": 3,
+            "email": "tempEmail3@temp3.com",
+            "password": "tempPassword3",
+            "name": "tempUser3"
+        },
+        {
+            "id": 4,
+            "email": "tempEmail4@temp4.com",
+            "password": "tempPassword4",
+            "name": "tempUser4"
+        },
+        {
+            "id": 5,
+            "email": "tempEmail5@temp5.com",
+            "password": "tempPassword5",
+            "name": "tempUser5"
+        }
+    ],
+    "contacts": [
+        {
+            "id": 1,
+            "users":[
+                {
+                    "id": 4,
+                    "email": "tempEmail4@temp4.com",
+                    "password": "tempPassword4",
+                    "name": "tempUser4"
+                },
+                {
+                    "id": 5,
+                    "email": "tempEmail5@temp5.com",
+                    "password": "tempPassword5",
+                    "name": "tempUser5"
+                }
+            ]
         }
     ]
 }

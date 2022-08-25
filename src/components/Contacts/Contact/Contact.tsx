@@ -1,6 +1,18 @@
-
+import './Contact.scss'
 const Contact = () => {
-    return <></>
+    return <div className="contact-item">
+        <div className="contact-item__img">
+            <img src="https://www.pngmart.com/files/21/Account-User-PNG-Photo.png" alt="avatar" />
+        </div>
+        <div className="contact-item__info">
+            <h4 className="contact-item__info__name">
+                Vasua
+            </h4>
+            <hr />
+            <p className="contact-item__info__status">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Optio vel omnis ut sed esse impedit aliquid, in ipsum autem minus magni illo rem blanditiis, molestias obcaecati sunt? Laudantium, dignissimos culpa?</p>
+        </div>
+    </div>
 }
 
 export default Contact
