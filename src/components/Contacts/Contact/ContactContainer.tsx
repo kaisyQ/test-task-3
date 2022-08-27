@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { deleteContactThnk } from "../../../redux/reducers/contacts-reducer"
+import { deleteContactThnk, editContactThnk } from "../../../redux/reducers/contacts-reducer"
 import Contact from "./Contact"
 
 const mapStateToProps = (state: any) => {
@@ -7,7 +7,8 @@ const mapStateToProps = (state: any) => {
 } 
 
 const mapDispatchToProps = {
-    deleteContact: deleteContactThnk
+    deleteContact: deleteContactThnk,
+    editContact: editContactThnk
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact)

@@ -16,5 +16,6 @@ export const authApi = {
 export const conctactApi = {
     getContacts: (userId: number) => instance.get(`contacts/?userId=${userId}`),
     createContact: (newContactObject: any) => instance.post(`contacts`, newContactObject),
-    deleteContact: (id: number) => instance.delete(`contacts/${id}`)
+    deleteContact: (id: number) => instance.delete(`contacts/${id}`),
+    editContact: (id: number, newDataObj: any) => instance.put(`contacts/${id}`, newDataObj)
 }

@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     max-width: 720px;
+    min-height: 300px;
     padding: 50px;
     margin: 50px auto 50px auto;
     border: 1px solid #000;
@@ -23,9 +24,16 @@
 .contact-item__btn {
     margin-left: 20px;
     padding: 10px 15px;
+    min-width: 100px;
     background-color: rgb(68, 68, 242);
     color: #fff;
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.editing-input {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
 }

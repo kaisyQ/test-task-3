@@ -4,6 +4,7 @@ import { conctactApi } from "../../api/api"
 const SET_CONTACTS = 'SET_CONTACTS'
 const CREATE_NEW_CONTACT = 'CREATE_NEW_CONTACT'
 const DELETE_CONTACT = 'DELETE_CONTACT'
+const CHANGE_ITEM_NAME = 'CHANGE_ITEM_NAME'
 
 const initialState = {
     items : []
@@ -12,6 +13,7 @@ const initialState = {
 export const setContacts = (contactArr: any[]) => ({ type: SET_CONTACTS, contactArr })
 export const createContact = (contactName: string) => ({ type: CREATE_NEW_CONTACT, newItem: {contact: {name: contactName}} })
 export const deleteContact = (id: number) => ({ type: DELETE_CONTACT, id })
+export const changeName = (newName: string, id: number) => ({ type: CHANGE_ITEM_NAME, newName, id })
 
 export const setContactsThnk = (userId: number) => (dispatch: Dispatch) => {
     conctactApi.getContacts(userId).then(response => {
@@ -28,11 +30,16 @@ export const createContactThnk = (contactName: string, currentUserID: number) =>
 }
 
 export const deleteContactThnk = (id: number) => (dispatch: Dispatch) => {
-    conctactApi.deleteContact(id).then(response =>{
-            console.log(response)
+    conctactApi.deleteContact(id).then(response => {
             dispatch(deleteContact(id))
         }
     )
+}
+
+export const editContactThnk = (newName: string, id: number) => (dispatch: Dispatch) => {
+    conctactApi.editContact(id, {contact : {name : newName }}).then(response => {
+        dispatch(changeName(newName, id))
+    })
 }
 
 export default function contactReducer (state: any = initialState, action: any) {
@@ -52,7 +59,22 @@ export default function contactReducer (state: any = initialState, action: any) 
             return {
                 ...state,
                 items: state.items.filter((item: any) => item.id !== action.id)
-            } 
+            }
+        case CHANGE_ITEM_NAME :
+            return {
+                ...state,
+                items: state.items.map((item: any) => {
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            contact: {
+                                name: action.newName
+                            }
+                        }
+                    }
+                    return item
+                })
+            }
         default : 
             return state
     }

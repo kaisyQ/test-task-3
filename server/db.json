@@ -37,23 +37,8 @@
   ],
   "contacts": [
     {
-      "id": 3,
-      "userId": 1,
       "contact": {
-        "name": "Pog"
-      }
-    },
-    {
-      "contact": {
-        "name": "Pog"
-      },
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "contact": {
-        "name": ".;gfa"
+        "name": "Roma"
       },
       "id": 5
     },
@@ -70,6 +55,13 @@
         "name": "das"
       },
       "id": 7
+    },
+    {
+      "userId": 1,
+      "contact": {
+        "name": "Роман Корягин"
+      },
+      "id": 8
     }
   ]
 }

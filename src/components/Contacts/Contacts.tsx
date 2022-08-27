@@ -5,7 +5,6 @@ import ModalContainer from "./Modal/ModalContainer"
 import ContactContainer from "./Contact/ContactContainer"
 
 const Contacts = (props :any) => {
-    debugger
     useEffect(() => {
         if (props.user) {
             props.setContacts(props.user.id)
@@ -21,7 +20,6 @@ const Contacts = (props :any) => {
         <div className="contacts__header">
             <div className="contacts__header__btns">
                 <button onClick={() => { setIsShowingModal(true) }}>New Contact</button>
-                <button>Update Contact</button>
             </div>
             <div className="contacts__header__search">
                 <div className="search__img">
