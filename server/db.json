@@ -37,20 +37,6 @@
   ],
   "contacts": [
     {
-      "id": 1,
-      "userId": 1,
-      "contact": {
-        "name": "tempUser4"
-      }
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "contact": {
-        "name": "tempUser5"
-      }
-    },
-    {
       "id": 3,
       "userId": 1,
       "contact": {
@@ -65,30 +51,25 @@
       "id": 4
     },
     {
-      "contact": {
-        "name": "Pog"
-      },
       "userId": 1,
+      "contact": {
+        "name": ".;gfa"
+      },
       "id": 5
     },
     {
+      "userId": 1,
       "contact": {
-        "name": "Pog"
+        "name": "valus"
       },
       "id": 6
     },
     {
-      "contact": {
-        "name": "Роман Корягин"
-      },
-      "id": 7
-    },
-    {
       "userId": 1,
       "contact": {
-        "name": "ga;v,"
+        "name": "das"
       },
-      "id": 8
+      "id": 7
     }
   ]
 }

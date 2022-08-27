@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
-import Contact from "./Contact/Contact"
 import './Contacts.scss'
 import ModalContainer from "./Modal/ModalContainer"
+import ContactContainer from "./Contact/ContactContainer"
 
 const Contacts = (props :any) => {
+    debugger
     useEffect(() => {
         if (props.user) {
             props.setContacts(props.user.id)
@@ -35,7 +36,7 @@ const Contacts = (props :any) => {
             </div>
         </div>
         {
-            props.contacts.map((contact: any, index: number) => <Contact userName={contact.name} key={index}/>)
+            props.contacts.map((item: any) => <ContactContainer id={item.id} userName={item.contact.name} key={item.id}/>)
         }
         { isShowingModal && <ModalContainer  setIsShowingModal={setIsShowingModal} />}
     </div>
