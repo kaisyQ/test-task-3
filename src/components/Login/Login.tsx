@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './Login.scss'
-import { authApi, conctactApi } from '../../api/api'
 import { Navigate } from 'react-router-dom'
 
 const Login = (props: any) => {
@@ -32,19 +31,7 @@ const Login = (props: any) => {
             <div className='login-form__item'>
             <button onClick={(ev) => {
                 ev.preventDefault()
-                authApi.login({email, password}).then(response => {
-                    if(response.data.length === 0) {
-                        alert('invalid email or password')
-                    } else {
-                        props.login({
-                            id: response.data[0].id,
-                            email: response.data[0].email,
-                            name: response.data[0].name
-                        })
-                    }
-                })
-                
-
+                props.login(email, password)
             }}>Log in</button>
             </div>
         </form>
