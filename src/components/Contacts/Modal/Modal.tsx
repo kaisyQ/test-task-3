@@ -3,6 +3,11 @@ import './Modal.scss'
 
 const Modal = (props: any) => {
     const [name, setName] = useState('') 
+
+    const createBtnClick = (ev: any) : void => {
+        props.createContact(name, props.user.id)
+        props.setIsShowingModal(false)
+    }
     return <>
         <div className='modal'>
             <div className='modal__item'>
@@ -10,7 +15,7 @@ const Modal = (props: any) => {
                 <input value={name} onChange={(ev) => {setName(ev.target.value)}} id='nameInput'/>
             </div>
             <div>
-                <button onClick={() => {props.setIsShowingModal(false)}}>Create</button>
+                <button onClick={createBtnClick}>Create</button>
                 <button onClick={() => {props.setIsShowingModal(false)}}>Close</button>
             </div>
             

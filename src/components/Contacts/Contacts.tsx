@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 import Contact from "./Contact/Contact"
 import './Contacts.scss'
-import Modal from "./Modal/Modal"
+import ModalContainer from "./Modal/ModalContainer"
 
 const Contacts = (props :any) => {
     useEffect(() => {
@@ -19,10 +19,7 @@ const Contacts = (props :any) => {
     return <div className="contacts">
         <div className="contacts__header">
             <div className="contacts__header__btns">
-                <button onClick={() => {
-                    setIsShowingModal(true)
-                    //props.createContact('Pog', 3)
-                }}>New Contact</button>
+                <button onClick={() => { setIsShowingModal(true) }}>New Contact</button>
                 <button>Update Contact</button>
             </div>
             <div className="contacts__header__search">
@@ -38,9 +35,9 @@ const Contacts = (props :any) => {
             </div>
         </div>
         {
-            props.contacts.map((contact: any, index: number) => <Contact key={index}/>)
+            props.contacts.map((contact: any, index: number) => <Contact userName={contact.name} key={index}/>)
         }
-        { isShowingModal && <Modal  setIsShowingModal={setIsShowingModal} />}
+        { isShowingModal && <ModalContainer  setIsShowingModal={setIsShowingModal} />}
     </div>
 }
 

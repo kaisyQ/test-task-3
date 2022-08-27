@@ -18,7 +18,7 @@ export const setContactsThnk = (userId: number) => (dispatch: Dispatch) => {
 }
 
 export const createContactThnk = (contactName: string, currentUserID: number) => (dispatch: Dispatch) => {
-    conctactApi.createContact({contact: { name :contactName }}).then(response => {
+    conctactApi.createContact({ userId: currentUserID, contact: { name :contactName }}).then(response => {
         if (response.statusText === 'Created') {
             dispatch(createContact(contactName))
         }
