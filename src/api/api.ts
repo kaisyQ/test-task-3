@@ -14,5 +14,6 @@ export const authApi = {
 }
 
 export const conctactApi = {
-    getContacts: (userId: number) => instance.get(`contacts/?id=${userId}`)
+    getContacts: (userId: number) => instance.get(`contacts/?userId=${userId}`),
+    createContact: (newContactObject: any) => instance.post(`contacts`, newContactObject)
 }

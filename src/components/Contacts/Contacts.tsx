@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 import Contact from "./Contact/Contact"
 import './Contacts.scss'
+import Modal from "./Modal/Modal"
 
 const Contacts = (props :any) => {
     useEffect(() => {
@@ -11,13 +12,17 @@ const Contacts = (props :any) => {
     }, [])
 
     const [searchVl, setSearchVl] = useState('')
+    const [isShowingModal, setIsShowingModal] = useState(false)
 
     if (!props.isAuth) return <Navigate to='login' />
 
     return <div className="contacts">
         <div className="contacts__header">
             <div className="contacts__header__btns">
-                <button>New Contact</button>
+                <button onClick={() => {
+                    setIsShowingModal(true)
+                    //props.createContact('Pog', 3)
+                }}>New Contact</button>
                 <button>Update Contact</button>
             </div>
             <div className="contacts__header__search">
@@ -33,8 +38,9 @@ const Contacts = (props :any) => {
             </div>
         </div>
         {
-            props.contacts.map((contact: any) => <Contact key={contact.id}/>)
+            props.contacts.map((contact: any, index: number) => <Contact key={index}/>)
         }
+        { isShowingModal && <Modal  setIsShowingModal={setIsShowingModal} />}
     </div>
 }
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import Contacts from "./Contacts"
-import { setContactsThnk } from "../../redux/reducers/contacts-reducer"
+import { setContactsThnk, createContactThnk } from "../../redux/reducers/contacts-reducer"
 import { getIsAuth, getUser } from "../../redux/selectors/auth-selector"
 import { getContacts } from "../../redux/selectors/contacts-selector"
 
@@ -12,7 +12,9 @@ const mapStateToProps = (state: any) => {
     }
 }
 const mapDispatchToProps = {
-    setContacts: setContactsThnk
+    setContacts: setContactsThnk,
+    createContact: createContactThnk
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts)
