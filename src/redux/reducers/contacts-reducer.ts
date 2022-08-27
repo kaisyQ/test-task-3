@@ -7,6 +7,7 @@ const DELETE_CONTACT = 'DELETE_CONTACT'
 const CHANGE_ITEM_NAME = 'CHANGE_ITEM_NAME'
 const ADD_FILTER_PARAMS = 'ADD_FILTER_PARAMS'
 
+
 const initialState = {
     items : [],
     filterName: ''
@@ -16,7 +17,7 @@ export const setContacts = (contactArr: any[]) => ({ type: SET_CONTACTS, contact
 export const createContact = (contactName: string, id: number) => ({ type: CREATE_NEW_CONTACT, newItem: {id, contact: {name: contactName}} })
 export const deleteContact = (id: number) => ({ type: DELETE_CONTACT, id })
 export const changeName = (newName: string, id: number) => ({ type: CHANGE_ITEM_NAME, newName, id })
-export const setFilterParams = (filterName: string) => ({ type: ADD_FILTER_PARAMS, filterName})
+export const setFilterParams = (filterName: string) => ({ type: ADD_FILTER_PARAMS, filterName })
 
 export const setContactsThnk = (userId: number) => (dispatch: Dispatch) => {
     conctactApi.getContacts(userId).then(response => {
