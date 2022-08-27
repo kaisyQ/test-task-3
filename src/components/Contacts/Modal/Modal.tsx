@@ -5,7 +5,7 @@ const Modal = (props: any) => {
     const [name, setName] = useState('') 
 
     const createBtnClick = (ev: any) : void => {
-        props.createContact(name, props.user.id)
+        props.createContact(name, props.user.id, Math.floor(Math.random() * 1000))
         props.setIsShowingModal(false)
     }
     return <>

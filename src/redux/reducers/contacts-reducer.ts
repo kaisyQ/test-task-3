@@ -11,7 +11,7 @@ const initialState = {
 }
 
 export const setContacts = (contactArr: any[]) => ({ type: SET_CONTACTS, contactArr })
-export const createContact = (contactName: string) => ({ type: CREATE_NEW_CONTACT, newItem: {contact: {name: contactName}} })
+export const createContact = (contactName: string, id: number) => ({ type: CREATE_NEW_CONTACT, newItem: {id, contact: {name: contactName}} })
 export const deleteContact = (id: number) => ({ type: DELETE_CONTACT, id })
 export const changeName = (newName: string, id: number) => ({ type: CHANGE_ITEM_NAME, newName, id })
 
@@ -21,10 +21,10 @@ export const setContactsThnk = (userId: number) => (dispatch: Dispatch) => {
     })
 }
 
-export const createContactThnk = (contactName: string, currentUserID: number) => (dispatch: Dispatch) => {
-    conctactApi.createContact({ userId: currentUserID, contact: { name :contactName }}).then(response => {
+export const createContactThnk = (contactName: string, currentUserID: number, tempId: number) => (dispatch: Dispatch) => {
+    conctactApi.createContact({ id: tempId, userId: currentUserID, contact: { name :contactName }}).then(response => {
         if (response.statusText === 'Created') {
-            dispatch(createContact(contactName))
+            dispatch(createContact(contactName, tempId))
         }
     })
 }
