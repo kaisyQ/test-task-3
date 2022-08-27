@@ -7,7 +7,6 @@ import { connect } from "react-redux"
 const App = (props: any) => {
     return <div className="App">
         <BrowserRouter>
-            {props.user ? <h1>{props.user.name}</h1> : null}
             <Routes>
                 <Route path="/" element={<ContactContainer />} />
                 <Route path="/login" element={<LoginContainer />} />

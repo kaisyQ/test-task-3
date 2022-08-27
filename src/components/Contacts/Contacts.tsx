@@ -14,6 +14,11 @@ const Contacts = (props :any) => {
     const [searchVl, setSearchVl] = useState('')
     const [isShowingModal, setIsShowingModal] = useState(false)
 
+    const searchBtnClick = (ev: any) : void => {
+        props.setFilterParams(searchVl)
+        setSearchVl('')
+    }
+
     if (!props.isAuth) return <Navigate to='login' />
 
     return <div className="contacts">
@@ -22,19 +27,19 @@ const Contacts = (props :any) => {
                 <button onClick={() => { setIsShowingModal(true) }}>New Contact</button>
             </div>
             <div className="contacts__header__search">
-                <div className="search__img">
-                    <img src="https://static.tildacdn.com/tild6132-3530-4361-b637-653830303164/searchmagnifierinter.svg" alt="search-image" />
-                </div>
                 <input 
                     value={searchVl} 
                     onChange={(ev) => { setSearchVl(ev.target.value) }} 
                     placeholder="Find contact by name" 
                     type="text" 
                 />
+                <div className="search__img" onClick={searchBtnClick}>
+                    <img src="https://static.tildacdn.com/tild6132-3530-4361-b637-653830303164/searchmagnifierinter.svg" alt="search-image" />
+                </div>
             </div>
         </div>
         {
-            props.contacts.map((item: any) => <ContactContainer id={item.id} userName={item.contact.name} key={item.id}/>)
+            props.contactsToShow.map((item: any) => <ContactContainer id={item.id} userName={item.contact.name} key={item.id}/>)
         }
         { isShowingModal && <ModalContainer  setIsShowingModal={setIsShowingModal} />}
     </div>

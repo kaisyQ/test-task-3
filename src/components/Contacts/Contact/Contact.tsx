@@ -12,7 +12,7 @@ const Contact = (props: any) => {
 
     const ediiingBtnClick = (ev: any) : void => {
         if (isEditing) {
-            props.editContact(nameInptVl, props.id)
+            props.editContact(nameInptVl, props.id, props.user.id)
             setIsEditing(false)
         } else {
             setIsEditing(true)

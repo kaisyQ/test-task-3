@@ -1,3 +1,6 @@
+.contacts {
+    margin-top: 70px;
+}
 .contacts__header {
     display: flex;
     justify-content: center;
@@ -39,4 +42,5 @@
     img {
         width: 25px;
     }
+    cursor: pointer;
 }
