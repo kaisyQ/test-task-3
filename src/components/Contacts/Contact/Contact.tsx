@@ -12,6 +12,7 @@ const Contact = () => {
             <p className="contact-item__info__status">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Optio vel omnis ut sed esse impedit aliquid, in ipsum autem minus magni illo rem blanditiis, molestias obcaecati sunt? Laudantium, dignissimos culpa?</p>
         </div>
+        <button className='contact-item__btn'>X</button>
     </div>
 }
 

@@ -1,0 +1,42 @@
+.contacts__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contacts__header__btns {
+    margin-right: 50px;
+
+    button {
+        margin: 0 15px;
+        padding: 10px 30px;
+        color: #fff;
+        background-color: rgb(108, 108, 236);
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font: inherit;
+        font-weight: 600;
+    }
+}
+
+
+.contacts__header__search {
+    display: flex;
+
+    input {
+        margin-left: 10px;
+        padding: 5px;
+        border-bottom: 1px solid #000;
+        font-size: 16px;
+        font: inherit;
+        font-weight: 600;
+    }
+}
+
+.search__img {
+    img {
+        width: 25px;
+    }
+}
